@@ -1,0 +1,149 @@
+<ion-header-bar align-title="center" class="bar-stable">
+    <div class="buttons">
+        <button class="button button-icon ion-ios-arrow-left" ng-click="$ionicGoBack()">
+        </button>
+    </div>
+    <div class="h1 title login-title" >我的单据类型设置</div>
+</ion-header-bar>
+<ion-view>
+    <ion-content>
+     <ion-list>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               外购入库
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="purinstocks" ng-change="purInStock(purinstocks)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               外购退料
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factorypurmrb" ng-change="factoryPurMrb(factorypurmrb)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               销售退库
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factoryreturnstock" ng-change="factoryReturnStock(factoryreturnstock)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               生产领料
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factorypickmtrl" ng-change="factoryPickMtrl(factorypickmtrl)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               产品入库
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factoryproinstock" ng-change="factoryProInStock(factoryproinstock)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               产品退库
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factoryproreturnstock" ng-change="factoryProReturnStock(factoryproreturnstock)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               销售出库
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factorysaleoutstock" ng-change="factorySaleOutStock(factorysaleoutstock)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+       <ion-item>
+         <label class="list" style="border: 0;">
+           <label class="item item-input item-select storage-select">
+             <label class="input-label">
+               生产退料
+             </label>
+             <div data-tap-disabled="true">
+               <select ng-model="factoryreturnmtrk" ng-change="factoryReturnMtrk(factoryreturnmtrk)">
+                 <option value="1"><p><span>单据类型:</span><span class="span-content">工业丝包装单</span></p></option>
+                 <option value="2"><p><span>单据类型:</span><span class="span-content">线绳包装单</span></p></option>
+                 <option value="3"><p><span>单据类型:</span><span class="span-content">白坯布包装单</span></p></option>
+                 <option value="4"><p><span>单据类型:</span><span class="span-content">浸胶布包装单</span></p></option>
+               </select>
+             </div>
+           </label>
+         </label>
+       </ion-item>
+     </ion-list>
+    </ion-content>
+</ion-view>

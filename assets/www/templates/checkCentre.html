@@ -1,0 +1,87 @@
+<ion-header-bar align-title="center" class="bar-stable bar-stable-Inventoryset">
+    <div class="h1 title login-title" >盘点</div>
+    <div class="buttons">
+      <a  class="login-register" ng-click="openPopover($event)">
+        <img src="./img/plus.png">
+      </a>
+    </div>
+</ion-header-bar>
+<ion-view>
+    <ion-content has-bouncing="true" overflow-scroll="false">
+      <span style="background-color:rgba(153, 153, 153, 0.3);filter: alpha(opacity=30);  height:32px;line-height: 32px;width:100%;color:rgba(10, 157, 199, 0.44);display:inline-block;text-align: center;">请您在盘点前请选择仓库和仓位</span>
+        <!--<div class="row" style="border-bottom: 1px solid lightgray;">-->
+            <!--<div class="col tabs-striped">-->
+                <!--<div class="col-demo main-select" ng-class="{activity : type == 'friend'}" ng-click="changeType(0)">仓库</div>-->
+            <!--</div>-->
+            <!--<div class="col">-->
+                <!--<div class="col-demo main-select" ng-class="{activity : type == 'group'}" ng-click="changeType(1)">仓位</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="col">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-demo main-select" ng-class="{activity : type == 'focus'}" ng-click="changeType(2)">关注</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+
+        <!-- 类型列表-->
+        <ion-list>
+            <!-- 好友-->
+            <div ng-if="type == 'friend'">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap"><!-- href="#/tab/friendDetail"-->
+                   <div class="list-index">1</div>
+                    <h2>扫描字符：<span>AZ4234FFHErg21rrvfs...</span></h2>
+                    <p ng-if="storaged!=null"><span>仓库：</span><span ng-bind="storaged"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span>仓位：</span><span ng-bind="storaged"></span></p>
+                    <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                        删除
+                    </ion-option-button>
+                </ion-item>
+                <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+                  <div class="list-index">2</div>
+                    <h2>扫描字符: <span>43gzg34FFHEjrg21rg54rs...</span></h2>
+                  <p ng-if="storaged!=null"><span>仓库：</span><span ng-bind="storaged"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span>仓位：</span><span ng-bind="storaged"></span></p>
+                    <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                        删除
+                    </ion-option-button>
+                </ion-item>
+            </div>
+
+            <!--&lt;!&ndash; 群&ndash;&gt;-->
+            <!--<div ng-if="type == 'group'">-->
+                <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/groupDetail">-->
+                    <!--<img ng-src="img/mike.png">-->
+                    <!--<h2>足球协会</h2>-->
+                    <!--<p>准备吃饭了...</p>-->
+                    <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                        <!--删除-->
+                    <!--</ion-option-button>-->
+                <!--</ion-item>-->
+                <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/groupDetail">-->
+                    <!--<img ng-src="img/mike.png">-->
+                    <!--<h2>篮球协会</h2>-->
+                    <!--<p>发布了一个新活动</p>-->
+                    <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                        <!--删除-->
+                    <!--</ion-option-button>-->
+                <!--</ion-item>-->
+            <!--</div>-->
+
+            <!-- focus-->
+            <!--<div ng-if="type == 'focus'">-->
+                <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/friendDetail">-->
+                    <!--<img ng-src="img/mike.png">-->
+                    <!--<h2>mike</h2>-->
+                    <!--<p>关注：200</p>-->
+                    <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                        <!--删除-->
+                    <!--</ion-option-button>-->
+                <!--</ion-item>-->
+                <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/groupDetail">-->
+                    <!--<img ng-src="img/mike.png">-->
+                    <!--<h2>天翼足球协会</h2>-->
+                    <!--<p>关注：2000</p>-->
+                    <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                        <!--删除-->
+                    <!--</ion-option-button>-->
+                <!--</ion-item>-->
+            <!--</div>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

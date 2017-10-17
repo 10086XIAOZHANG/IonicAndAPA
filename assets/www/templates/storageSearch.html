@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-item class="item-input">
+                <span class="item-input-wrapper" style="margin-right:14px">
+                        <i class="icon ion-ios-search placeholder-icon" ng-click="search()"></i>
+                        <input id="search" type="search" placeholder="仓库名/关键词" ng-model="searchCont.key">
+                   <i class="icon ion-close-circled placeholder-icon" style="vertical-align: middle;"
+                      on-tap="clearSearch()" ng-if="searchCont.key.length"></i>
+                 </span>
+    <i class="" style="vertical-align: middle;margin-right:14px;"
+       on-tap="clearSearch()" >取消</i>
+  </ion-item>
+  <ion-item class="" ng-repeat="item in itemArr2" ng-click="toProducerList(item.StockName)">
+    <h2><span>仓库名：</span><span>{{item.StockName}}</span></h2>
+    <p><span>扫描字符:</span><span class="span-content">{{item.StockNumber}}</span></p>
+  </ion-item>
+</ion-list>

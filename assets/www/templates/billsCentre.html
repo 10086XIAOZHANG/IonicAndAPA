@@ -1,0 +1,151 @@
+<ion-header-bar align-title="center" class="bar-stable">
+    <div class="h1 title login-title" ng-bind="title"></div>
+    <div class="buttons">
+      <a  class="login-register" ng-click="openPopover($event)">
+        <img src="./img/plus.png">
+      </a>
+    </div>
+</ion-header-bar>
+<ion-view>
+    <ion-content has-bouncing="true" overflow-scroll="false">
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="{true:'item-stable'}[scan.isenble]" type="item-text-wrap" ng-repeat="scan in scans">
+                <div class="list-index" ng-bind="$index+1">1</div>
+                  <h2>
+                    <!--仓库-->
+                    <label class="list" style="border: 0;">
+                      <label class="item item-input item-select storage-select">
+                        <label class="input-label">
+                          仓库
+                        </label>
+                        <div data-tap-disabled="true" >
+                        <select ng-model="scan.storehouseId" ng-change="changeStorehouse(scan.storehouseId,$index)">
+                          <option ng-repeat="item in scan.storehouse" value={{item.StockNumber}}><h2><span>{{item.StockName}}</span></h2>&nbsp;&nbsp;<p><span>仓库编号:</span><span class="span-content">{{item.StockNumber}}</span></p></option>
+                        </select>
+                        </div>
+                      </label>
+                    </label>
+                    <!--仓库-->
+                    <!--仓位-->
+                    <label class="list" style="border: 0;">
+                      <label class="item item-input item-select storage-select">
+                        <label class="input-label">
+                          仓位
+                        </label>
+                        <div data-tap-disabled="true">
+                        <select ng-model="scan.storepositonId">
+                          <option ng-repeat="item in scan.storeposition" value={{item.PositionId}}><h2><span>{{item.PositionName}}</span></h2><p><span>仓位编号:</span><span class="span-content">{{item.PositionId}}</span></p></option>
+                        </select>
+                        </div>
+                      </label>
+                    </label>
+                    <!--仓位-->
+                  </h2>
+                  <p style="margin-top: 5px;
+				    position: absolute;
+				    top: 85px;
+				    width: 100%;
+				    left: 0;">
+                    <any class="item-input">
+                      <span class="input-label" style="width:15%;">扫描字符:</span>
+                      <input ng-model="scan.scanstring" style="width:100%;" type="text" placeholder="扫描字符">
+                    </any>
+                  </p>
+                  <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button  ng-class="{true: 'button-dark', false: 'button-positive'}[scan.isenble]" ng-click="scanBarcode($index)">
+                   扫描
+                </ion-option-button>
+                  <ion-option-button class="button-assertive" ng-click="remove($index)">
+                      删除
+                  </ion-option-button>
+            </ion-item>
+            <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" >-->
+              <!--&lt;!&ndash; FORM &ndash;&gt;-->
+              <!--<form>-->
+              <!--<div class="list-index">2</div>-->
+              <!--<h2>-->
+                <!--&lt;!&ndash;仓库&ndash;&gt;-->
+                <!--<label class="list" style="border: 0;">-->
+                  <!--<label class="item item-input item-select storage-select">-->
+                    <!--<label class="input-label">-->
+                      <!--仓库-->
+                    <!--</label>-->
+                    <!--<div data-tap-disabled="true">-->
+                    <!--<select  ng-model="formData.storehouse">-->
+                      <!--<option ng-repeat="item in storehouses"><h2><span>{{item.StockName}}</span></h2>&nbsp;&nbsp;<p><span>仓库编号:</span><span class="span-content">{{item.StockNumber}}</span></p></option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                <!--</label>-->
+                <!--&lt;!&ndash;仓库&ndash;&gt;-->
+                <!--&lt;!&ndash;仓位&ndash;&gt;-->
+                <!--<label class="list" style="border: 0;">-->
+                  <!--<label class="item item-input item-select storage-select">-->
+                    <!--<label class="input-label">-->
+                      <!--仓位-->
+                    <!--</label>-->
+                    <!--<select>-->
+                      <!--<option ng-repeat="item in itemArr2"><h2><span>{{item.name}}</span></h2><p><span>扫描字符:</span><span class="span-content">{{item.code}}</span></p></option>-->
+                    <!--</select>-->
+                  <!--</label>-->
+                <!--</label>-->
+                <!--&lt;!&ndash;仓位&ndash;&gt;-->
+              <!--</h2>-->
+              <!--<p>-->
+                <!--<any class="item-input">-->
+                  <!--<span class="input-label">扫描字符:</span>-->
+                  <!--<input ng-model="formData.scanstring"  type="text" placeholder="扫描字符">-->
+                <!--</any>-->
+              <!--</p>-->
+                <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+              <!--<ion-option-button class="button-positive" ng-click="processForm()">-->
+                <!--下推-->
+              <!--</ion-option-button>-->
+                <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                    <!--删除-->
+                <!--</ion-option-button>-->
+              <!--</form>-->
+              <!--&lt;!&ndash; FORM &ndash;&gt;-->
+            <!--</ion-item>-->
+            <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" >-->
+              <!--<div class="list-index">3</div>-->
+              <!--<h2>-->
+                <!--&lt;!&ndash;仓库&ndash;&gt;-->
+                <!--<label class="list" style="border: 0;">-->
+                  <!--<label class="item item-input item-select storage-select">-->
+                    <!--<label class="input-label">-->
+                      <!--仓库-->
+                    <!--</label>-->
+                    <!--<div data-tap-disabled="true">-->
+                    <!--<select>-->
+                      <!--<option ng-repeat="item in storehouses"><h2><span>{{item.StockName}}</span></h2>&nbsp;&nbsp;<p><span>仓库编号:</span><span class="span-content">{{item.StockNumber}}</span></p></option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                <!--</label>-->
+                <!--&lt;!&ndash;仓库&ndash;&gt;-->
+                <!--&lt;!&ndash;仓位&ndash;&gt;-->
+                <!--<label class="list" style="border: 0;">-->
+                  <!--<label class="item item-input item-select storage-select">-->
+                    <!--<label class="input-label">-->
+                      <!--仓位-->
+                    <!--</label>-->
+                    <!--<select>-->
+                      <!--<option ng-repeat="item in itemArr2"><h2><span>{{item.name}}</span></h2><p><span>扫描字符:</span><span class="span-content">{{item.code}}</span></p></option>-->
+                    <!--</select>-->
+                  <!--</label>-->
+                <!--</label>-->
+                <!--&lt;!&ndash;仓位&ndash;&gt;-->
+              <!--</h2>-->
+              <!--<p><span>扫描字符:</span><span class="span-content">cdfEdG32sVfEeDgd</span></p>-->
+                <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+               <!--<ion-option-button class="button-positive" ng-click="remove(chat)">-->
+                <!--下推-->
+               <!--</ion-option-button>-->
+                <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+                    <!--删除-->
+                <!--</ion-option-button>-->
+            <!--</ion-item>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

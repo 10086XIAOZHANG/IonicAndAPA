@@ -1,0 +1,29 @@
+<ion-header-bar align-title="center" class="bar-stable">
+  <div class="buttons">
+    <button class="button button-icon ion-ios-arrow-left" ng-click="$ionicGoBack()">
+    </button>
+  </div>
+  <div class="h1 title login-title" >仓库、仓位</div>
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider">
+        仓库
+      </div>
+      <div class="item item-text-wrap">
+        <div class="item" style="padding: 4px;">
+          <ion-list>
+            <ion-radio ng-model="choice" ng-value="'0'"><span>物料编码:</span><span></span></ion-radio>
+            <ion-radio ng-model="choice" ng-value="'1'">公开</ion-radio>
+          </ion-list>
+        </div>
+      </div>
+      <div class="item item-divider">
+        <button class="button button-block button-positive">
+          创建群组
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

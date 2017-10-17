@@ -1,0 +1,93 @@
+
+<ion-header-bar align-title="center" class="bar-stable" style=" background-color:rgb(30, 130, 210); ">
+  <h1 class="title">首页</h1>
+  <!--<div class="home-bar-color" style="position: relative;width: 100%; top: -4px;left: 0px;height: 28px;width: 100%;  background-color:#387ef5;">-->
+  <!--&lt;!&ndash;<span class="icon-qrcode" style="padding-left: 6px;"></span><br><span>扫一扫</span>&ndash;&gt;-->
+  <!--<span><i class="icon iconfont icon-yingyong01"><br/><i style="text-align: right;font-size:xx-small;padding:10px;">扫一扫</i></i></span>-->
+  <!--<input ng-model="tag" class="tab-search icon iconfont icon-sousuo" auto-focus-when="focus" placeholder="请输入搜索关键词" ng-model="searchInput" style="border:none;">-->
+  <!--&lt;!&ndash;<span class="ion-ios-keypad-outline" style="display:inline-block;margin-right:12px;">更多应用</span>&ndash;&gt;-->
+  <!--</div>-->
+</ion-header-bar>
+<ion-view>
+  <ion-content has-bouncing="true" overflow-scroll="false">
+    <ion-refresher on-refresh="doRefresh()" pulling-text="下拉刷新" refreshing-text="正在刷新" refreshing-icon="ion-loading-b"></ion-refresher>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div class="row applictions_row" >
+          <a href="" ng-click='showBillTypes("tab.message",{title:"产品入库",billType:"1"},"产品入库")'>
+            <div class="col col-100">
+              <!--href="#/tab/message/产品入库/{{billType.proInStock}}"-->
+              <img class="home-img" src="./img/applications/chcx.png" /><div  class="home-title-txt" style="float:left;margin-left: 26px;">产品入库</div></div></a>
+        </div>
+        <div class="row applictions_row  home-img" >
+          <a href="" ng-click='showBillTypes("tab.message",{title:"产品退库",billType:"1"},"产品退库")'>
+            <div class="col col-100">
+              <!--href="#/tab/message/产品退库/{{billType.proReturnStock}}"-->
+              <img class="home-img" src="./img/applications/cm.png" /><div class="home-title-txt">产品退库</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.billSearch",{titles:"外购入库"},"外购入库")'>
+            <div class="col col-100">
+              <img class="home-img" src="./img/applications/cpjy.png" /><div class="home-title-txt">外购入库</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.message",{title:"外购退料",billType:"1"},"外购退料")'>
+            <div class="col col-100">
+              <!--<a href="#/tab/message/外购退料/{{billType.purMrb}}">-->
+              <img class="home-img" src="./img/applications/qtrk.png" /><div class="home-title-txt">外购退料</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.message",{title:"生产领料",billType:"1"},"生产领料")'>
+            <div class="col col-100">
+              <!--<a href="#/tab/message/生产领料/{{billType.pickMtrl}}">-->
+              <!--openPopover($event,"tab.message",{title:"生产领料",billType:"1"},"生产领料")-->
+              <img class="home-img" src="./img/applications/dbd.png" /><div class="home-title-txt">生产领料</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.message",{title:"生产退料",billType:"1"},"生产退料")'>
+            <div class="col col-100 home-img">
+              <!--<a href="#/tab/message/生产退料/{{billType.returnMtrk}}">-->
+              <img class="home-img" src="./img/applications/gxhb.png" /><div class="home-title-txt">生产退料</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.billSearch",{titles:"销售出库"},"销售出库")'>
+            <div class="col col-100">
+              <!--<a href="#/tab/billsearch/销售出库">-->
+              <img class="home-img" src="./img/applications/wwck.png" /><div class="home-title-txt">销售出库</div></div></a>
+        </div>
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.billSearch",{titles:"销售退库"},"销售退库")'>
+            <div class="col col-100">
+              <!--<a href="#/tab/billsearch/销售退库">-->
+              <img class="home-img" src="./img/applications/kccx.png" /><div class="home-title-txt">销售退库</div></div></a>
+        </div>
+        <!--<div class="row applictions_row">-->
+        <!--<div class="col col-50">-->
+        <!--<a href="javascript:void(0)" ng-click="saleNotices()">-->
+        <!--<img src="./img/applications/zlzs.png" /><br/>发货通知</a></div>-->
+        <!--<div class="col col-50">-->
+        <!--<a href="javascript:void(0)" ng-click="PurNotes()">-->
+        <!--<img src="./img/applications/xsfh.png" /><br/>采购收料</a></div>-->
+        <!--</div>-->
+        <div class="row applictions_row">
+          <a href="" ng-click='showBillTypes("tab.collectionCentre",{titles:"盘点"},"盘点")'> <div class="col col-100 home-img">
+            <img class="home-img" src="./img/applications/lljy.png" /><div class="home-title-txt">盘点</div></div></a>
+        </div>
+      </div>
+  </ion-content>
+  <script id="my-popover-choosebilltype.html" type="text/ng-template">
+    <ion-popover-view class="fit">
+      <ion-header-bar>
+        <h1 class="title">选择单据类型</h1>
+      </ion-header-bar>
+      <ion-content>
+        <ion-list>
+          <ion-item style="padding:6px;"><a class="button button-block button-dark login-register addlist-billtype" ng-click='chooseTypeItem(1)' style="background-color:white;border:none;text-align: left;height:100%;width:100%;color:#333333;font-size:18px;margin-top:0px;margin-bottom:0px;">工业丝包装单</a></ion-item>
+          <ion-item style="padding:6px;"><a class="button button-block button-dark login-register addlist-billtype" ng-click="chooseTypeItem(2)" style="background-color:white;border:none;text-align: left;height:100%;width:100%;color:#333333;font-size:18px;margin-top:0px;margin-bottom:0px;">线绳包装单</a></ion-item>
+          <ion-item style="padding:6px;"><a class="button button-block button-dark login-register addlist-billtype" ng-click="chooseTypeItem(3)" style="background-color:white;border:none;text-align: left;height:100%;width:100%;color:#333333;font-size:18px;margin-top:0px;margin-bottom:0px;">白坯布包装单</a></ion-item>
+          <ion-item style="padding:6px;"><a class="button button-block button-dark login-register addlist-billtype" ng-click="chooseTypeItem(4)" style="background-color:white;border:none;text-align: left;height:100%;width:100%;color:#333333;font-size:18px;margin-top:0px;margin-bottom:0px;">浸胶布包装单</a></ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+</ion-view>

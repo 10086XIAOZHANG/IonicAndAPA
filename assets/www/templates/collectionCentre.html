@@ -1,0 +1,44 @@
+<ion-header-bar align-title="center" class="bar-stable" style=" background-color:rgb(30, 130, 210); ">
+  <h1 class="title">选择仓库、仓位</h1>
+  <!--<div class="home-bar-color" style="position: relative;width: 100%; top: -4px;left: 0px;height: 28px;width: 100%;  background-color:#387ef5;">-->
+  <!--&lt;!&ndash;<span class="icon-qrcode" style="padding-left: 6px;"></span><br><span>扫一扫</span>&ndash;&gt;-->
+  <!--<span><i class="icon iconfont icon-yingyong01"><br/><i style="text-align: right;font-size:xx-small;padding:10px;">扫一扫</i></i></span>-->
+  <!--<input ng-model="tag" class="tab-search icon iconfont icon-sousuo" auto-focus-when="focus" placeholder="请输入搜索关键词" ng-model="searchInput" style="border:none;">-->
+  <!--&lt;!&ndash;<span class="ion-ios-keypad-outline" style="display:inline-block;margin-right:12px;">更多应用</span>&ndash;&gt;-->
+  <!--</div>-->
+</ion-header-bar>
+<ion-view>
+<div class="content has-header">
+  <div class="list">
+    <label class="list" style="border: 0;">
+      <label class="item item-input item-select storage-select">
+        <label class="input-label">
+          仓库
+        </label>
+        <div data-tap-disabled="true" >
+          <select ng-model="storehouse" ng-change="changeStorehouse(scan.storehouseId,$index)">
+            <option ng-repeat="item in storehouses" value={{item.StockNumber}}><h2><span>{{item.StockName}}</span></h2>&nbsp;&nbsp;<p><span>仓库编号:</span><span class="span-content">{{item.StockNumber}}</span></p></option>
+          </select>
+        </div>
+      </label>
+    </label>
+    <!--仓位-->
+    <label class="list" style="border: 0;">
+      <label class="item item-input item-select storage-select">
+        <label class="input-label">
+          仓位
+        </label>
+        <div data-tap-disabled="true">
+          <select ng-model="storepositonId">
+            <option ng-repeat="item in storeposition" value={{item.PositionId}}><h2><span>{{item.PositionName}}</span></h2><p><span>仓位编号:</span><span class="span-content">{{item.PositionId}}</span></p></option>
+          </select>
+        </div>
+      </label>
+    </label>
+    <!--仓位-->
+  </div>
+  <div class="padding">
+    <button class="button button-block button-positive" ng-click="submitSave()">确定</button>
+  </div>
+</div>
+</ion-view>
